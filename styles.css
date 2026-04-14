@@ -226,6 +226,12 @@ h3 {
   color: var(--muted);
 }
 
+.icon {
+  width: 22px;
+  height: 22px;
+  color: var(--accent-2);
+}
+
 .social-item {
   display: flex;
   align-items: center;
