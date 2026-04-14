@@ -9,5 +9,3 @@ tabs.forEach(btn=>{
     document.getElementById(btn.dataset.tab).classList.add('active');
   });
 });
-
-lucide.createIcons();
