@@ -233,6 +233,18 @@ h3 {
   gap: 1rem;
 }
 
+.social-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.social-left svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-2);
+}
+
 .social-link {
   padding: 0.72rem 1rem;
   border-radius: 999px;
