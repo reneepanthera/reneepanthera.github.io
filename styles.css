@@ -240,9 +240,9 @@ h3 {
 }
 
 .social-item:hover svg,
-.social-item:hover img {
+.social-item:hover .icon {
+  color: #e2ccff;
   transform: scale(1.15);
-  opacity: 1;
 }
 
 .social-left {
