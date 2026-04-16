@@ -229,7 +229,8 @@ h3 {
 .icon {
   width: 30px;
   height: 30px;
-  color: var(--accent-2);
+  color: #d4b8ff;
+  flex-shrink: 0;
 }
 
 .social-item {
