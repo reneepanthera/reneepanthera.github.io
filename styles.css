@@ -2,6 +2,7 @@
    THEME / TOKENS
 ========================= */
 :root {
+   color-scheme: dark;
   --bg: #120f1b;
   --bg-soft: #1a1526;
   --panel: rgba(255, 255, 255, 0.08);
