@@ -640,6 +640,43 @@ h3 {
   display: none;
 }
 
+.feedback-status {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+
+  background: rgba(20, 16, 29, 0.95);
+  border: 1px solid rgba(179, 136, 255, 0.3);
+  color: var(--accent-2);
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  transition: all 0.3s ease;
+}
+
+/* when visible */
+.feedback-status.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* error version */
+.feedback-status.error {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.4);
+}
+
 /* =========================
    LIGHTBOX (BORDER + ALIGNED)
 ========================= */
