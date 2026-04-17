@@ -489,18 +489,51 @@ function init() {
   initAgeGate();
   loadGalleryEntries();
   loadUrbexEntries();
-
-  // =============================
-  // Feedback form reset + message
-  // =============================
+  bindFeedbackForm();
+  
+  function bindFeedbackForm() {
   const feedbackForm = document.querySelector(".feedback-form");
+  const status = document.getElementById("feedback-status");
 
-  feedbackForm?.addEventListener("submit", () => {
-    setTimeout(() => {
-      feedbackForm.reset();
-      alert("Feedback sent! 💜");
-    }, 100);
+  if (!feedbackForm || !status) return;
+
+  feedbackForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(feedbackForm);
+
+    try {
+      const response = await fetch(feedbackForm.action, {
+        method: feedbackForm.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        feedbackForm.reset();
+
+        status.textContent = "Feedback sent! 💜";
+        status.classList.remove("error");
+        status.classList.add("show");
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 4000);
+
+      } else {
+        status.textContent = "Something went wrong. Try again.";
+        status.classList.add("error", "show");
+      }
+
+    } catch (error) {
+      console.error(error);
+      status.textContent = "Failed to send. Check connection.";
+      status.classList.add("error", "show");
+    }
   });
+}
 }
 
 init();
