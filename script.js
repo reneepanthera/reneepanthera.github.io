@@ -489,6 +489,18 @@ function init() {
   initAgeGate();
   loadGalleryEntries();
   loadUrbexEntries();
+
+  // =============================
+  // Feedback form reset + message
+  // =============================
+  const feedbackForm = document.querySelector(".feedback-form");
+
+  feedbackForm?.addEventListener("submit", () => {
+    setTimeout(() => {
+      feedbackForm.reset();
+      alert("Feedback sent! 💜");
+    }, 100);
+  });
 }
 
 init();
